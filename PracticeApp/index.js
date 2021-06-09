@@ -1,18 +1,25 @@
 var express=require('express');
 app=express();
 
-app.get("/",function(req,res){
-    res.send("Hello This is Home");
+// app.get("/",function(req,res){
+//     res.send("Hello This is Home");
+// })
+// app.post("/about",function(req,res){
+//     res.send("Hello This is About");
+// })
+// app.put("/contact",function(req,res){
+//     res.send("Hello This is Contact");
+// })
+// app.delete("/terms",function(req,res){
+//     res.send("Hello This is Terms");
+// })
+
+
+//in this code you can change status in your Postman app
+app.post("/one",function(req,res){
+    res.status(403).end();
 })
-app.post("/about",function(req,res){
-    res.send("Hello This is About");
-})
-app.put("/contact",function(req,res){
-    res.send("Hello This is Contact");
-})
-app.delete("/terms",function(req,res){
-    res.send("Hello This is Terms");
-})
+
 
 app.listen(8000,function(){
     console.log("Server Run Successfully")
