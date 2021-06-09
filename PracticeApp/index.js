@@ -1,5 +1,5 @@
-var express=require('express');
-app=express();
+var express = require('express');
+app = express();
 
 // app.get("/",function(req,res){
 //     res.send("Hello This is Home");
@@ -16,12 +16,36 @@ app=express();
 
 
 //in this code you can change status in your Postman app
-app.post("/one",function(req,res){
-    res.status(403).end();
+// app.post("/one",function(req,res){
+//     res.status(403).end();
+// })
+
+//this is for JSON response
+app.post("/four", function (req, res) {
+
+    let myJSONarray = [
+        {
+            name: "Ahsanul",
+            age: 20,
+            city: "Sylhet"
+        },
+        {
+            name: "Hakim",
+            age: 21,
+            city: "Dhaka"
+        },
+        {
+            name: "Honey",
+            age: 19,
+            city: "Habigonj"
+        }
+
+    ]
+       res.json(myJSONarray);
+
 })
 
-
-app.listen(8000,function(){
+app.listen(8000, function () {
     console.log("Server Run Successfully")
 })
 
